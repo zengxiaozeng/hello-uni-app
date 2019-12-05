@@ -19,7 +19,7 @@ class HTTP {
 
 	_request(url, resolve, reject, data = {}, method = 'GET') {
 		uni.request({
-			url: url,
+			url: `${this.baseUrl}${url}`,
 			method: method,
 			data: data,
 			header: {

@@ -7,16 +7,21 @@
 			:indicatorDots="indicatorDots">
 		</Swiper>
 		<button type="warn" open-type="share">分享</button>
+		<form class="hotFormId" @submit="getFormIdValue" report-submit='true'>
+			<button formType="submit" type="primary">获取formId</button>
+		</form>
 	</view>
 </template>
 
 <script>
 	import Swiper from '@/components/common/swiper.vue'
+	import formIdMixin from '@/utils/form-id-mixins.js'
 	
 	export default {
 		components: {
 			Swiper
 		},
+		mixins: [formIdMixin],
 		data() {
 			return {
 				title: 'Hello',
@@ -51,7 +56,10 @@
 
 		},
 		methods: {
-
+			getFormIdValue(e) {
+				console.log(e.detail.formId)
+				this.getFormIdData(e.detail.formId, 2)
+			}
 		}
 	}
 </script>

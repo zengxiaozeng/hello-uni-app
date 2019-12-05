@@ -1,13 +1,13 @@
 import { HTTP } from '../utils/http.js'
 
-class AppModel extends HTTP {
-	login(params) {
+class FormIdModel extends HTTP {
+	getFormId(params) {
         return this.request({
-            url: `/user/login`,
+            url: `/api/getFormId`,
 			method: 'POST',
 			data: params
         })
     }
 }
 
-export { AppModel }
+export { FormIdModel }

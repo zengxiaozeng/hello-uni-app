@@ -5,7 +5,7 @@ class MineModel extends HTTP {
 	// 爱心记录查询
 	loveList(params) {
 	    return this.request({
-	        url: `${this.baseUrl}/love_list`,
+	        url: `/love_list`,
 			method: 'POST',
 			data: {
 				currentPage: params.currentPage,
@@ -18,7 +18,7 @@ class MineModel extends HTTP {
 	// 兑换记录查询
 	exchangeRecordList(params) {
 	    return this.request({
-	        url: `${this.baseUrl}/exchange_record_list`,
+	        url: `/exchange_record_list`,
 			method: 'POST',
 			data: {
 				...params
